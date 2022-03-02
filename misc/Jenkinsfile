@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://quay.io/', 'quay.io') {
+     docker.withRegistry('https://quay.io/repository/', 'quay.io') {
        def app = docker.build("cjneto/docker-nodejs-demo:${commit_id}", '.').push()
      }
    }
